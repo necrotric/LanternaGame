@@ -8,6 +8,8 @@ public class HeroMovement {
     public static void moveHero(Player player, Terminal terminal) throws InterruptedException {
 
         //Wait for a key to be pressed
+        //Wait for a key to be pressed
+        //Wait for a key to be pressed
         Key key;
         do {
             Thread.sleep(50);
