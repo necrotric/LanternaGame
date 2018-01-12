@@ -3,12 +3,10 @@ package com.company;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.terminal.Terminal;
 
-public class HeroMovement {
+class HeroMovement {
 
-    public static void moveHero(Player player, Terminal terminal) throws InterruptedException {
+    static void moveHero(Player player, Terminal terminal) throws InterruptedException {
 
-        //Wait for a key to be pressed
-        //Wait for a key to be pressed
         //Wait for a key to be pressed
         Key key;
         do {
@@ -20,37 +18,33 @@ public class HeroMovement {
 
         switch (key.getKind()) {
             case ArrowDown:
-
                 if (player.y < 100) {
 
-                    player.y++;
+                    player.y+=2;
 
                 }
                 break;
+
             case ArrowUp:
 
-                player.y--;
+                player.y-=2;
+
                 break;
+
             case ArrowLeft:
-
                 if (player.x > 0) {
-
-                    player.x--;
+                    player.x-=2;
 
                 }
                 break;
+
             case ArrowRight:
 
                 if (player.x < 99) {
-
-                    player.x++;
+                    player.x+=2;
 
                 }
                 break;
         }
-
-
-        System.out.println(key.getCharacter() + " " + key.getKind());
     }
-
 }

@@ -1,15 +1,15 @@
 package com.company;
 
-public class Player {
-
+class Player {
 
     int x;
     int y;
     char hero;
 
-    public Player(int x, int y) {
+    Player(int x, int y) {
         hero = 'X';
         this.x = x;
         this.y = y;
+
     }
 }

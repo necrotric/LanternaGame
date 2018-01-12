@@ -1,6 +1,7 @@
 package com.company;
 
 import com.googlecode.lanterna.TerminalFacade;
+import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.terminal.Terminal;
 
 import java.nio.charset.Charset;
@@ -18,13 +19,11 @@ public class Main {
         List<Enemy> enemies = new ArrayList<>();
         enemies.add(new Enemy(10,2));
         enemies.add(new Enemy(90,2 ));
-        enemies.add(new Enemy(10,28));
-        enemies.add(new Enemy(90,28 ));
+        enemies.add(new Enemy(10,25));
+        enemies.add(new Enemy(90,25 ));
 
-        //Create player, add Movement, print Enteties.
+        //Create player,
         Player player = new Player(50, 15);
-
-
 
         //While gameover is false, call methods moveHero, printEntities
         boolean gameOver = false;
@@ -33,11 +32,8 @@ public class Main {
             HeroMovement.moveHero(player, terminal);
             Gamelogic.monsterMovement(player,enemies);
             PrintEntities.printEntities(player, enemies, terminal);
+            GameOver.gameOver(player,enemies,terminal,gameOver);
 
         }
-
-
     }
-
 }
-
