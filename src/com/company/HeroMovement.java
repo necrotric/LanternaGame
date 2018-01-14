@@ -5,8 +5,9 @@ import com.googlecode.lanterna.terminal.Terminal;
 
 class HeroMovement {
 
-    static void moveHero(Player player, Terminal terminal) throws InterruptedException {
+    static void moveHero(Player player, Terminal terminal, HighScore highscore) throws InterruptedException {
 
+        terminal.setCursorVisible(false);
         //Wait for a key to be pressed
         Key key;
         do {
@@ -21,20 +22,20 @@ class HeroMovement {
                 if (player.y < 100) {
 
                     player.y+=2;
-
+                    highscore.highscore++;
                 }
                 break;
 
             case ArrowUp:
 
                 player.y-=2;
-
+                highscore.highscore++;
                 break;
 
             case ArrowLeft:
                 if (player.x > 0) {
                     player.x-=2;
-
+                    highscore.highscore++;
                 }
                 break;
 
@@ -42,7 +43,7 @@ class HeroMovement {
 
                 if (player.x < 99) {
                     player.x+=2;
-
+                    highscore.highscore++;
                 }
                 break;
         }

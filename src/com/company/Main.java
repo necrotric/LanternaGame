@@ -15,6 +15,9 @@ public class Main {
         Terminal terminal = TerminalFacade.createTerminal(System.in, System.out, Charset.forName("UTF8"));
         terminal.enterPrivateMode();
 
+        HighScore highscore = new HighScore(0);
+
+
         //creating enemies
         List<Enemy> enemies = new ArrayList<>();
         enemies.add(new Enemy(10,2));
@@ -24,6 +27,8 @@ public class Main {
 
         //Create player,
         Player player = new Player(50, 15);
+        Bonus bonus = new Bonus(1,1);
+
 
 
 
@@ -35,9 +40,11 @@ public class Main {
         while (!gameOver) {
 
 
-            HeroMovement.moveHero(player, terminal);
+            HeroMovement.moveHero(player, terminal,highscore);
             Gamelogic.monsterMovement(player,enemies);
-            PrintEntities.printEntities(player, enemies, terminal);
+            PrintEntities.printEntities(player, enemies, terminal, bonus);
+            Gamelogic.playerHighScore(highscore,terminal);
+            Gamelogic.printBonusCoin(player, terminal, highscore, bonus);
             GameOver.gameOver(player,enemies,terminal,gameOver);
 
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 class PrintEntities {
 
-    static void printEntities(Player player, List<Enemy> enemies, Terminal terminal) {
+    static void printEntities(Player player, List<Enemy> enemies, Terminal terminal, Bonus bonus) {
 
         //removes the old pos
         terminal.clearScreen();
@@ -21,7 +21,12 @@ class PrintEntities {
         for(Enemy enemy : enemies) {
             terminal.moveCursor(enemy.x, enemy.y);
             terminal.putCharacter(enemy.enemy);
-
         }
+
+
+
+        terminal.moveCursor(bonus.x, bonus.y);
+        terminal.putCharacter(bonus.coin);
+
     }
 }
