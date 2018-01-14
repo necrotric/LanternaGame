@@ -1,10 +1,10 @@
 package com.company;
 
+import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.terminal.Terminal;
 
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 class Gamelogic {
 
@@ -64,4 +64,33 @@ class Gamelogic {
 
     }
 
-}
+    static void playerHighScore(HighScore highscore, Terminal terminal) throws InterruptedException{
+
+
+            printTextHighScore(1,0,"Highscore:" + highscore.highscore, terminal);
+
+        }
+
+        private static void printTextHighScore(int x, int y, String message, Terminal terminal) {
+        for (int i=0;i<message.length();i++)
+        {
+            terminal.moveCursor(x, y);
+            terminal.putCharacter(message.charAt(i));
+            x=x+1;
+        }
+    }
+
+    static void printBonusCoin(Player player, Terminal terminal, HighScore highscore, Bonus bonus) throws InterruptedException {
+
+        Random rn = new Random();
+        int lowX = 0;
+        int highX = 99;
+        int lowY = 1;
+        int highY = 29;
+        if (highscore.highscore%20==0) {
+            bonus.x = rn.nextInt(highX - lowX) + lowX;
+            bonus.y = rn.nextInt(highY - lowY) + lowY;
+        }
+    }
+
+    }
