@@ -25,14 +25,22 @@ public class Main {
         //Create player,
         Player player = new Player(50, 15);
 
+
+
+
+
         //While gameover is false, call methods moveHero, printEntities
         boolean gameOver = false;
 
         while (!gameOver) {
+
+
             HeroMovement.moveHero(player, terminal);
             Gamelogic.monsterMovement(player,enemies);
             PrintEntities.printEntities(player, enemies, terminal);
             GameOver.gameOver(player,enemies,terminal,gameOver);
+
+
 
         }
     }

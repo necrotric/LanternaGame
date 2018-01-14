@@ -7,8 +7,12 @@ import java.util.List;
 class PrintEntities {
 
     static void printEntities(Player player, List<Enemy> enemies, Terminal terminal) {
+
         //removes the old pos
         terminal.clearScreen();
+
+        //Sets the cursor to invisible
+        terminal.setCursorVisible(false);
 
         //Print the player
         terminal.moveCursor(player.x, player.y);
@@ -19,9 +23,5 @@ class PrintEntities {
             terminal.putCharacter(enemy.enemy);
 
         }
-
-        //Keeps the Cursor in left-top corner
-        terminal.moveCursor(0, 0);
-
     }
 }

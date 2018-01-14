@@ -12,4 +12,6 @@ class Player {
         this.y = y;
 
     }
+
+
 }
