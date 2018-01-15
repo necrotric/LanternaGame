@@ -1,16 +1,14 @@
 package com.company;
 
 class Enemy {
-
-    int x;
-    int y;
+    float x;
+    float y;
     char enemy;
 
-    Enemy(int x, int y) {
+    Enemy(float x, float y) {
         enemy = 'O';
         this.y = y;
         this.x = x;
-
 
     }
 }

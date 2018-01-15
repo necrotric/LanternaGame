@@ -1,7 +1,6 @@
 package com.company;
 
-public class Bonus {
-
+class Bonus {
     int x;
     int y;
     char coin;

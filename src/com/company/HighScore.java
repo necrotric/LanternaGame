@@ -1,13 +1,9 @@
 package com.company;
 
-public class HighScore {
-
+class HighScore {
     int highscore;
 
-
     HighScore(int highscore) {
-
         this.highscore = highscore;
-
     }
 }

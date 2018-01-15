@@ -1,7 +1,6 @@
 package com.company;
 
 class Player {
-
     int x;
     int y;
     char hero;
@@ -12,6 +11,4 @@ class Player {
         this.y = y;
 
     }
-
-
 }
